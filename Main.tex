@@ -1,0 +1,120 @@
+\documentclass{book}
+
+\counterwithin{figure}{section}
+
+% General
+\usepackage{setspace} % helps with spacing
+\usepackage[toc]{appendix} % appendix
+\usepackage{pdfpages}
+
+% Graphics
+\usepackage{graphicx} % Required for inserting images
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tikz} % to draw graphics
+\usepackage{matlab-prettifier} %matlab code
+\usepackage{verbatim}
+
+% Math
+\usepackage{amsmath} % Apparently required for equation design
+\usepackage{gensymb} % for the degree symbols
+\usepackage{bm} % bold for greek letters
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+
+%tikzpicture
+\usepackage{tikz}
+\usepackage{scalerel}
+\usepackage{pict2e}
+\usepackage{tkz-euclide}
+\usepackage{circuitikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns,arrows}
+\usetikzlibrary{shadows}
+\usetikzlibrary{external}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{arrows, decorations.markings}
+\tikzstyle{vecArrow} = [thick, decoration={markings,mark=at position
+   1 with {\arrow[semithick]{open triangle 60}}},
+   double distance=2pt, shorten >= 5.5pt,
+   preaction = {decorate},
+   postaction = {draw,line width=1pt, white,shorten >= 4.5pt}]
+\tikzstyle{innerWhite} = [semithick, white,line width=1.4pt, shorten >= 4.5pt]
+
+%pgfplots
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{statistics}
+\usepgfplotslibrary{fillbetween}
+
+%colours
+\usepackage{xcolor}
+
+% References
+\usepackage{todonotes}
+
+% Subfiles
+\usepackage{subfiles}
+
+% Hyperlinks
+\usepackage{hyperref, cleveref}
+\hypersetup{%
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=cyan,
+    pdftitle={Thesis},
+    pdfpagemode=FullScreen
+}
+
+% Geometry
+\usepackage{setspace}
+
+\usepackage{geometry}
+
+\geometry{
+a4paper,
+left=25.4mm,
+top=25.4mm,
+right=25.4mm,
+bottom=25.4mm
+}
+
+\doublespacing
+
+% \title{Master's Thesis}
+% \author{Oswald Lawson}
+% \date{October 2024}
+
+\begin{document}
+
+\input{Titlepage}
+
+ \hypersetup{linkcolor=black} 
+ \tableofcontents
+
+\newpage
+
+\input{Introduction}
+
+\input{Literature_Review}
+
+\input{Theoretical_Basis}
+
+\input{Investigation}
+
+\input{Experimental}
+
+\input{Results}
+
+\input{Conclusions}
+
+\bibliographystyle{ieeetr}
+\bibliography{references}
+
+\appendix
+
+\include{AppendixA}
+
+\end{document}
